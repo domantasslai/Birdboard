@@ -24,6 +24,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/projects', [App\Http\Controllers\ProjectsController::class, 'index'])->name('projects.index');
+Route::get('/projects/{project}', [App\Http\Controllers\ProjectsController::class, 'show'])->name('projects.show');
 Route::post('/projects', [App\Http\Controllers\ProjectsController::class, 'store'])->name('projects.store');
 
 Route::get('/test', function(){
