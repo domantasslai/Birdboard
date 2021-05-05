@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+  $routes = collect(\Route::getRoutes())->map(function ($route) {
+    return $route->action['as'] ?? "";
+  });
+  dd($routes);
     return view('welcome');
 });
 
